@@ -9,6 +9,9 @@ import java.util.Scanner;
 public class GetConnection {
     private static Connection conn;
     private static Statement stmt;
+
+    private static final String databasePassword = "DatabaseTryout";
+    private static final String databaseUsername = "root";
     private static final String DATABASE_NAME = "studentInfo";
 
     public static void main(String[] args) {
@@ -106,7 +109,7 @@ public class GetConnection {
             String url="jdbc:mysql://localhost:3306/mysql"; //JDBC的URL
 
             //调用DriverManager对象的getConnection()方法，获得一个Connection对象
-            conn = DriverManager.getConnection(url, "root","DatabaseTryout");
+            conn = DriverManager.getConnection(url, databaseUsername, databasePassword);
 
             //创建一个Statement对象
             stmt = conn.createStatement();
